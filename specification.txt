@@ -1,0 +1,45 @@
+HTLM tags
+
+<meta>
+<html>
+<head>
+<a>
+<b>
+<head>
+<body>
+<footer>
+<button>
+<span>
+<div>
+<nav>
+<ul>
+<li>
+<ol>
+<h1-4>
+<table>
+<tr>
+<td>
+
+CSS selectors
+
+.container-fluid
+.header
+p
+#main-menu
+.titulo-importante::after
+
+CSS properties
+
+content
+position
+left
+bottom
+transform
+width
+height
+background
+border-radius
+transition
+
+I used java and bootsrap for the interactable objects like menus, and also
+to put some sugar into small interactions like in my services page.

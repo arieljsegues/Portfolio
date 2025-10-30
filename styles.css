@@ -1,0 +1,435 @@
+/* ============================= */
+/* Variables globales de color   */
+/* ============================= */
+:root {
+    --color-fondo: #ffffff;        /* fondo general */
+    --color-principal: #4681fe;    /* azul marino para header y menú */
+    --color-acento: #FE6847;       /* naranja para hover/activo */
+    --color-texto: #1b2833;        /* azul oscuro casi negro para texto */
+}
+
+/* ============================= */
+/* Contenedores generales        */
+/* ============================= */
+.container-fluid {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* ============================= */
+/* Header                        */
+/* ============================= */
+.header {
+    height: auto;
+    width: 100%;
+    background-color: var(--color-fondo);
+    color: var(--color-fondo);
+}
+
+/* ============================= */
+/* Menú principal                */
+/* ============================= */
+#main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;           /* horizontal */
+    gap: 20px;               /* separación entre ítems */
+    white-space: nowrap;     /* evita que los enlaces se rompan */
+}
+
+.navbar-nav .nav-item {
+    flex-shrink: 0;          /* evita que los ítems se compriman */
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: var(--color-fondo);
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--color-acento);
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
+.footer {
+    background-color: var(--color-fondo);
+    color: var(--color-fondo);
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--color-acento);
+}
+
+/* ============================= */
+/* Texto general                 */
+/* ============================= */
+p {
+    color: var(--color-texto);
+    text-align:justify;
+    text-
+}
+
+/* ============================= */
+/* Media queries responsive      */
+/* ============================= */
+@media (max-width: 768px) {
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 0;
+        z-index: 9999;
+    }
+
+    #main-menu {
+        max-width: 400px;
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 15px;
+        background-color: var(--color-fondo);
+        border-radius: 8px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+@media (min-width:100px) {
+    .video-container {
+    aspect-ratio: 16 / 10;
+    }
+    .hero-section {
+    text-align: center;
+    padding: 40px 15px;
+    }
+
+    .hero-section h1 {
+    margin: 15px auto;
+    color: var(--color-texto);
+}
+
+    /* Contenedor del video con proporción 16:9 */
+    .video-container {
+    position: relative;
+    width: min(90vw, 1000px); /* ocupa hasta el 90% del ancho de la ventana o 1000px, lo que sea menor */
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+/* ============================= */
+/* Navbar responsive hamburguesa */
+/* ============================= */
+.navbar-toggler {
+    border: none;
+    color: var(--color-fondo);
+}
+
+.navbar-toggler-icon {
+    filter: invert(0);
+}
+
+/* Fondo y color del menú colapsado */
+.navbar-collapse {
+    background-color: var(--color-fondo); /* azul marino */
+}
+
+.navbar-collapse .nav-link {
+    color: var(--color-principal); /* blanco sobre azul */
+}
+
+.navbar-collapse .nav-link:hover,
+.navbar-collapse .nav-link.active {
+    color: var(--color-acento);
+}
+
+
+/*TITULO IMPORTANTE*/
+
+
+.titulo-importante {
+    font-size: clamp(2rem, 4vw, 3rem); /* crece suavemente con la pantalla */
+    font-weight: 800;
+    color: var(--color-principal);
+    text-align: center;
+    margin: 3px auto 25px auto;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+/* Subrayado elegante animado */
+.titulo-importante::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-acento), var(--color-principal));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.titulo-importante:hover::after {
+    width: 100%;
+}
+.titulo-importante:hover {
+    color: var(--color-acento);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.texto-generico{
+    position: relative;
+    width: min(90vw, 1000px);
+    margin: 0 auto;
+}
+
+/* Estilos generales de la tabla */
+table {
+    width: min(90vw, 1000px); /* Ancho máximo de 1000px y mínimo del 90% del viewport */
+    margin: 40px auto;       /* Centrada horizontalmente y con un poco de espacio arriba y abajo */
+    border-collapse: collapse; /* Evita espacios dobles entre bordes */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra ligera para darle relieve */
+}
+
+/* Estilos de las celdas y encabezados */
+th, td {
+    border: 2px solid #4681fe; /* Bordes claros y visibles */
+    padding: 12px 20px;        /* Espaciado interno para que sea legible */
+    text-align: left;           /* Alineación de texto */
+}
+
+/* Estilo del encabezado */
+th {
+    background-color: #4681fe; /* Fondo azul */
+    color: #ffffff;            /* Texto blanco */
+    font-weight: bold;
+}
+
+/* Opcional: filas alternas para mejor legibilidad */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Grids principales */
+.grid-content-music {
+    display: grid;
+    grid-template-columns: 1fr 1fr 5px 1fr 1fr; /* 2 canciones, separador, 2 canciones */
+    gap: 10px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.grid-content-video {
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr; /* 2 canciones, separador, 2 canciones */
+    gap: 10px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+.video {
+    padding: 12px;
+    border: 2px solid #4681fe;
+    text-align: center;
+}
+
+
+
+/* Separador y canciones */
+.song {
+    padding: 12px;
+    border: 2px solid #4681fe;
+    text-align: center;
+}
+
+.separator {
+    background-color: var(--color-acento);
+}
+
+/* ============================= */
+/* Responsive para pantallas menores */
+@media (max-width: 1050px) {
+    .grid-content-music {
+        grid-template-columns: 1fr 1fr; /* 2 columnas */
+        grid-auto-rows: auto;
+    }
+    }
+
+    .grid-content-music .separator,
+    {
+        grid-column: 1 / -1; /* separador ocupa toda la fila */
+        height: 5px;          /* altura del separador */
+        margin: 10px 0;       /* separación vertical */
+    }
+
+
+@media (max-width: 554px) {
+    .grid-content-music,
+    .grid-content-video {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+
+    .grid-content-music .separator,
+     {
+        grid-column: 1 / -1;
+        height: 5px;
+        margin: 5px 0;
+    }
+
+}
+
+
+/* flecha en desplegable */
+
+
+.titulo-importante .arrow {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+/* Rotar la flecha cuando collapse está abierto */
+.titulo-importante.collapsible[aria-expanded="true"] .arrow {
+    transform: rotate(180deg);
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 15px;
+}
+
+.services-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: var(--color-fondo);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1 1 300px; /* crece hasta 1fr, mínimo 300px */
+    max-width: 350px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: default;
+}
+
+.service-card h5 {
+    color: var(--color-principal);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.service-card p {
+    color: var(--color-texto);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background-color: #f0f6ff; /* ligero cambio de fondo */
+}
+.service-card .icon:hover {
+    animation: shake 0.6s ease-in-out;
+    transform-origin: center;
+}
+
+/* Optional: add icon above title */
+.service-card .icon {
+    font-size: 2.5rem;
+    color: var(--color-acento);
+    margin-bottom: 15px;
+}
+.icon:hover{
+
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+    .services-row {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-10deg); }
+    20% { transform: rotate(10deg); }
+    30% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    50% { transform: rotate(-5deg); }
+    60% { transform: rotate(5deg); }
+    70% { transform: rotate(-5deg); }
+    80% { transform: rotate(5deg); }
+    90% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+.row.mb-5 p {
+    text-align: center;
+}
